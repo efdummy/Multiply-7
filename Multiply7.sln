@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiply7", "Multiply7\Multiply7\Multiply7.csproj", "{0F42DE76-5692-41B8-99EB-5B80AC234E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiply7Content", "Multiply7\Multiply7Content\Multiply7Content.contentproj", "{28BCAC83-70EB-4610-BD61-81CF0769E2C5}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs05
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Multiply7\\Multiply7\\Multiply7.csproj
+		SccProjectName1 = Multiply7/Multiply7
+		SccLocalPath1 = Multiply7\\Multiply7
+		SccProjectUniqueName2 = Multiply7\\Multiply7Content\\Multiply7Content.contentproj
+		SccProjectName2 = Multiply7/Multiply7Content
+		SccLocalPath2 = Multiply7\\Multiply7Content
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{0F42DE76-5692-41B8-99EB-5B80AC234E29}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{28BCAC83-70EB-4610-BD61-81CF0769E2C5}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{28BCAC83-70EB-4610-BD61-81CF0769E2C5}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
