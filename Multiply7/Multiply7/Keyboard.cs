@@ -76,22 +76,30 @@ namespace Multiply7
         public string CurrentKey(Vector2 mousePosition)
         {
             string currentKey = "";
-            int x=(int)mousePosition.X;
-            int y=(int)mousePosition.Y;
+            int x = (int)mousePosition.X;
+            int y = (int)mousePosition.Y;
             int column;
+            int line;
 
             if (mousePosition.X <= keyboardRow1Position.X)
                 column = 0;
             else
                 column = (int)((mousePosition.X - keyboardRow1Position.X) / (keyboardLineLength / 5));
 
+            line = 1;
             if (mousePosition.Y >= keyboardRow1Position.Y)
             {
                 int valueToAdd = 5;
                 if (mousePosition.Y > keyboardRow2Position.Y)
+                {
+                    line = 2;
                     valueToAdd = 0;
+                }
                 currentKey = (column + valueToAdd).ToString();
             }
+            if ((line == 1) && (currentKey == "10")) currentKey = "9";
+            if ((line == 2) && (currentKey == "5")) currentKey = "4";
+
             return currentKey;
         }
 
