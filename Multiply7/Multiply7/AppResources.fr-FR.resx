@@ -136,7 +136,7 @@
     <value>Appuyez ici</value>
   </data>
   <data name="TOUCHTOSTART" xml:space="preserve">
-    <value>Appuyez ici{0}pour démarrer{0}{0}{0}Appuyez ici pour{0}changer de langue</value>
+    <value>Appuyez ici{0}pour démarrer{0}{0}{0}Touch here to{0}change language</value>
   </data>
   <data name="TYPERESULT" xml:space="preserve">
     <value>Tapez le résultat</value>
