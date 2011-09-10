@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -239,7 +238,7 @@ namespace Multiply7
                         if (!String.IsNullOrEmpty(currentKey))
                         {
                             // Draw the current pressed key
-                            keyboard.DrawPressedKey(spriteBatch, currentKey);
+                            keyboard.DrawPressedKey(spriteBatch, currentKey, state.previousKey);
 
                             // If result is found
                             if (state.isResultFound(currentKey))
