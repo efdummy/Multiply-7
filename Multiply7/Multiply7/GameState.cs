@@ -29,7 +29,7 @@ namespace Multiply7
         // The rocket list
         List<Missile> missiles = new List<Missile>();
 
-        string previousKey;
+        public string previousKey;
         int playerResult1;
         int playerResult2;
 
@@ -101,7 +101,7 @@ namespace Multiply7
             bool isresultfound = false;
             playerResult1 = int.Parse((previousKey + currentKey));
             playerResult2 = int.Parse(currentKey);
-            if ((playerResult1 == operand * mult) || (playerResult1 == operand * mult))
+            if ((playerResult1 == operand * mult) || (playerResult2 == operand * mult))
                 isresultfound = true;
             previousKey = currentKey;
             return isresultfound;

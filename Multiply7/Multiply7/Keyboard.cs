@@ -19,7 +19,7 @@ namespace Multiply7
         Vector2 keyboardRow2Position { get; set; }
         float keyboardLineLength { get; set; }
         int keyboardLineHeight { get; set; }
-        Vector2 keyDisplayPosition; 
+        Vector2 pressedKeyDisplayPosition; 
         String keyboardRow0String;
         String keyboardRow1String;
         String keyboardRow2String;
@@ -33,8 +33,8 @@ namespace Multiply7
 
             myFont = font;
             keyboardRow0String = typeResult;
-            keyboardRow1String = "5   6   7   8   9";
-            keyboardRow2String = "0   1   2   3   4";
+            keyboardRow1String = "0   1   2   3   4";
+            keyboardRow2String = "5   6   7   8   9";
             KeyboardWidth = myFont.MeasureString(keyboardRow2String).Length();
             KeyboardHeight= myFont.LineSpacing*3;
             SetPosition();
@@ -51,9 +51,12 @@ namespace Multiply7
             spriteBatch.DrawString(myFont, keyboardRow1String, keyboardRow1Position, Color.White);
             spriteBatch.DrawString(myFont, keyboardRow2String, keyboardRow2Position, Color.White);
         }
-        public void DrawPressedKey(SpriteBatch spriteBatch, string key)
+        public void DrawPressedKey(SpriteBatch spriteBatch, string key, string previousKey)
         {
-            spriteBatch.DrawString(myFont, key, keyDisplayPosition, Color.Yellow);
+            string displayText = "";
+            if (previousKey == "0") displayText = String.Format("{1}", previousKey, key);
+            else displayText = displayText = String.Format("{0}{1} & {1}", previousKey, key);
+            spriteBatch.DrawString(myFont, displayText, pressedKeyDisplayPosition, Color.Yellow);
         }
 
         public void SetPosition()
@@ -68,7 +71,7 @@ namespace Multiply7
             keyboardLineHeight = lineHeight;
 
             // Pressed code display feedback position
-            keyDisplayPosition = new Vector2(keyboardRow0Position.X+KeyboardWidth, keyboardRow0Position.Y);
+            pressedKeyDisplayPosition = new Vector2(keyboardRow0Position.X+KeyboardWidth/3, keyboardRow0Position.Y-2*lineHeight);
 
         }
 
@@ -82,23 +85,24 @@ namespace Multiply7
             int line;
 
             if (mousePosition.X <= keyboardRow1Position.X)
+                // At the left of column 0, consider that you are at column 0
                 column = 0;
             else
+                // Calculate colum position
                 column = (int)((mousePosition.X - keyboardRow1Position.X) / (keyboardLineLength / 5));
 
             line = 1;
-            if (mousePosition.Y >= keyboardRow1Position.Y)
+            // Case when you tape on the first digit's line or when you tap above this line
+            currentKey = (column).ToString();
+            if (mousePosition.Y > keyboardRow2Position.Y)
             {
-                int valueToAdd = 5;
-                if (mousePosition.Y > keyboardRow2Position.Y)
-                {
-                    line = 2;
-                    valueToAdd = 0;
-                }
-                currentKey = (column + valueToAdd).ToString();
+                // You tap on the second line
+                line = 2;
+                currentKey = (column + 5).ToString();
             }
-            if ((line == 1) && (currentKey == "10")) currentKey = "9";
-            if ((line == 2) && (currentKey == "5")) currentKey = "4";
+            // Correction (when your tap at the rigth of 9 or 4 key
+            if ((line == 1) && (currentKey == "5")) currentKey = "4";
+            if ((line == 2) && (currentKey == "10")) currentKey = "9";
 
             return currentKey;
         }
