@@ -25,7 +25,7 @@ namespace Multiply7
         Random random;
         int mult;
         int operand;
-
+        bool isOperandDisplayedFirst;
         // The rocket list
         List<Missile> missiles = new List<Missile>();
 
@@ -66,7 +66,11 @@ namespace Multiply7
         {
             operationCount++;
             if (operationCount > Options.MaxOperationCount) DisplayState = State.GameResult;
-            operand = random.Next(10); while ((operand == 0)||(operand == 1)) operand = random.Next(10);
+            // Random operand must be different from previous operand and greater than 1
+            int previousOperand = operand;
+            operand = random.Next(10); while ((operand <2)||(operand==previousOperand)) operand = random.Next(10);
+            // Bool true if the operand must be displayed first to screen (If mult is 3 decide if we display 3xn o nx3)
+            if (random.Next(10) > 5.5) isOperandDisplayedFirst = true; else isOperandDisplayedFirst = false;
             int x = random.Next(MaxX);
             int y = 0;
             slatePosition = new Vector2(x, y);
@@ -86,7 +90,12 @@ namespace Multiply7
         }
         public string OperationString()
         {
-            return mult.ToString() + " x " + operand.ToString();
+            string operationString;
+            if (isOperandDisplayedFirst)
+                operationString = mult.ToString() + " x " + operand.ToString();
+            else
+                operationString = operand.ToString() + " x " + mult.ToString();
+            return operationString;
         }
         public void AddError()
         {

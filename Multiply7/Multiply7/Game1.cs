@@ -121,7 +121,8 @@ namespace Multiply7
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            state.SetWidthAndHeight(graphics, mySlateTexture.Width, mySlateTexture.Height+(int)keyboard.KeyboardHeight);
+            //state.SetWidthAndHeight(graphics, mySlateTexture.Width, mySlateTexture.Height+(int)keyboard.KeyboardHeight);
+            state.SetWidthAndHeight(graphics, mySlateTexture.Width, mySlateTexture.Height);
 
             switch (state.DisplayState)
             {
@@ -184,7 +185,7 @@ namespace Multiply7
                             break;
 
                         case State.GameResult:
-                            if (touchPosition.Y < state.ScreenHeight / 1.40)
+                          //  if (touchPosition.Y < state.ScreenHeight / 1.40)
                                 state.DisplayState = State.MainMenu;
                             break;
                     }
