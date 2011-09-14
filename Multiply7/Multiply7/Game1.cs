@@ -117,9 +117,25 @@ namespace Multiply7
 
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
+            // Process the hardware back button according to the technical certification requirements
+            // number 5.2.4.1 – Back Button: Previous Pages
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+                switch (state.DisplayState)
+                {
+                    case State.MainMenu:
+                        this.Exit();
+                        break;
+                    case State.GameRunning:
+                        state.DisplayState = State.MainMenu;
+                        break;
+                    case State.GameResult:
+                        state.DisplayState = State.MainMenu;
+                        break;
+                    default:
+                        this.Exit();
+                        break;
+                }
+        
 
             //state.SetWidthAndHeight(graphics, mySlateTexture.Width, mySlateTexture.Height+(int)keyboard.KeyboardHeight);
             state.SetWidthAndHeight(graphics, mySlateTexture.Width, mySlateTexture.Height);
