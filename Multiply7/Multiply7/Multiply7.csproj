@@ -19,9 +19,8 @@
     <XapFilename>$(AssemblyName).xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <XnaWindowsPhoneManifestTemplate>Properties\WMAppManifest.xml</XnaWindowsPhoneManifestTemplate>
-    <TileImage>
-    </TileImage>
-    <TileTitle>Multiply7</TileTitle>
+    <TileImage>Multiply7ApplicationTileImage.png</TileImage>
+    <TileTitle>Multiply 7</TileTitle>
     <SupportedCultures>en-US;fr-FR</SupportedCultures>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>Multiply7ApplicationIcon.png</Thumbnail>
@@ -119,10 +118,8 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="Background.png">
-      <XnaPlatformSpecific>true</XnaPlatformSpecific>
-    </Content>
     <Content Include="Multiply7ApplicationIcon.png" />
+    <Content Include="Multiply7ApplicationTileImage.png" />
     <Content Include="Multiply7MarketplaceCatalogLarge.png" />
   </ItemGroup>
   <ItemGroup>
