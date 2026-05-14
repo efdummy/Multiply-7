@@ -7,3 +7,5 @@ FR
 Ce programme est un jeu qui vous aide à apprendre vos tables de multiplication.
 Suivez le lien suivant pour obtenir plus de détails :
 https://github.com/efdummy/Multiply-7/blob/master/docs/Documentation.md
+
+Technologies: C# - .NET - XNA Framework - Windows Phone
